@@ -18,3 +18,5 @@ const jsonobject = React.createElement("div",
 root.render(jsonobject);
 
 //there should be only one root which is used to render 
+// we can see that using createElement we are making code ugly when writing nested structure
+// Led to origin of JSX 
