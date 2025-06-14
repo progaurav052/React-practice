@@ -11,7 +11,10 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 </div>
 */
 
-const jsonobject = React.createElement("div", { id: "top" }, React.createElement("div", { id: "parent" }, React.createElement("h1", { id: "heading" }, "Nested component")));
+const jsonobject = React.createElement("div",
+     { id: "top" },
+      React.createElement("div", { id: "parent" },
+         [React.createElement("h1", { id: "heading" }, "Nested component1"),React.createElement("h1", { id: "heading" }, "Nested component2")]));
 root.render(jsonobject);
 
 //there should be only one root which is used to render 
