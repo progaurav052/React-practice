@@ -1,0 +1,22 @@
+{
+  "name": "rdfull",
+  "version": "1.0.0",
+  "description": "this is Namaste react-app",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/progaurav052/React-practice.git"
+  },
+  "author": "gaurav pai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/progaurav052/React-practice/issues"
+  },
+  "homepage": "https://github.com/progaurav052/React-practice#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}

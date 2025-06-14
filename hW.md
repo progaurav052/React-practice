@@ -5,3 +5,9 @@
 5. why there are 2 files of that link (react and react-dom)?? 1. code of react(core react) 2. react dom for modifying dom object and ops 
 
 6. Hello world using React ==> using react and react dom
+7. npm init ==> to configure our project ==> package.json ==> configuration file for npm ==> tells about all dependicies 
+8. Parcel is bundler ==> gives our application superpowers
+
+9. "^" => upgrade to ,minor and patch version , "~" ==> major version upgrade
+10. package-lock.json ?? ==> package-lock as name suggests keep tracks of exact version of dependencies , also maintains hash of dependencies
+11. node-modules is an result of transitive dependencies
