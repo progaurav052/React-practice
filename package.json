@@ -2,7 +2,7 @@
   "name": "rdfull",
   "version": "1.0.0",
   "description": "this is Namaste react-app",
-  "main": "App.js",
+
   "scripts": {
     "test": "jest"
   },
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/progaurav052/React-practice#readme",
   "devDependencies": {
     "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
   }
 }
