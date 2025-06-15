@@ -26,3 +26,5 @@
 13. JSX is not an part of React , it wad syntax developed to make life easy
 14. JSX "is not HTML inside JS " , it is HTML-XML like syntax , 
 15. although JSX is not valid js how is the code rendered on browser ==> parcel transforms these jsx to browser understable code (using babel)
+16. /React Element (which is nothing but javascript object)==> on rendering ==> HTML element
+// jsx heading is also an react element , this conversion is done by babel , which converts jsx to js code (this js code return react element which is javascript object)

@@ -4,14 +4,25 @@ import ReactDOM from "react-dom/client";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //React Element (which is nothing but javascript object)==> on rendering ==> HTML element
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Namaste React uisng React.create Element🚀"
-);
-console.log(heading);
-
 // jsx heading is also an react element , this conversion is done by babel , which converts jsx to js code (this js code return react element which is javascript object)
-const jsxheading = <h1 id="heading">Namaste React using JSX</h1>;
-console.log(jsxheading);
-root.render(jsxheading);
+const Para = () => {
+  return (
+    <div>
+      <h2>H2 component</h2>
+      <p>Para component</p>
+    </div>
+  );
+};
+
+// functional component ==> function which return jsx
+// Gives Example of component composition , component composed with another
+const HeadingComponent = () => {
+  return (
+    <div>
+      <h1>Namaste react using functional component</h1>
+      <Para />
+    </div>
+  );
+};
+
+root.render(<HeadingComponent />); // to render function component
