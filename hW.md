@@ -22,7 +22,7 @@
 9. "^" => upgrade to ,minor and patch version , "~" ==> major version upgrade
 10. package-lock.json ?? ==> package-lock as name suggests keep tracks of exact version of dependencies , also maintains hash of dependencies
 11. node-modules is an result of transitive dependencies
-12. diff bw npm and npx ?
+12. diff bw npm and npx ?  ==> chatgpt
 13. JSX is not an part of React , it wad syntax developed to make life easy
 14. JSX "is not HTML inside JS " , it is HTML-XML like syntax , 
 15. although JSX is not valid js how is the code rendered on browser ==> parcel transforms these jsx to browser understable code (using babel)

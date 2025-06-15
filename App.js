@@ -14,12 +14,20 @@ const Para = () => {
   );
 };
 
+const title = (
+  <div>
+    <p>Hi this is Title element</p>
+    <Para />
+  </div>
+);
+
 // functional component ==> function which return jsx
 // Gives Example of component composition , component composed with another
 const HeadingComponent = () => {
   return (
     <div>
       <h1>Namaste react using functional component</h1>
+      {title}
       <Para />
     </div>
   );
