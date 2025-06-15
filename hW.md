@@ -16,8 +16,13 @@
    # for doing prod build ==> optimized and super efficient build ==> npm parcel build index.html
    # whatever our files are there (js,css,html) ==> will be minnified and stored in dist ==> which will be used to host (serve)
    # parcel-cache and dist will be generated with every-build
+   # parcel-cache basically is cache memory of transformed file-ouput,dependency graph relation , parsed files .... avoid reparsing and reanalysing during build 
 
 
 9. "^" => upgrade to ,minor and patch version , "~" ==> major version upgrade
 10. package-lock.json ?? ==> package-lock as name suggests keep tracks of exact version of dependencies , also maintains hash of dependencies
 11. node-modules is an result of transitive dependencies
+12. diff bw npm and npx ?
+13. JSX is not an part of React , it wad syntax developed to make life easy
+14. JSX "is not HTML inside JS " , it is HTML-XML like syntax , 
+15. although JSX is not valid js how is the code rendered on browser ==> parcel transforms these jsx to browser understable code (using babel)
