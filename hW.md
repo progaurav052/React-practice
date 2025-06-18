@@ -24,7 +24,32 @@
 11. node-modules is an result of transitive dependencies
 12. diff bw npm and npx ?  ==> chatgpt
 13. JSX is not an part of React , it wad syntax developed to make life easy
-14. JSX "is not HTML inside JS " , it is HTML-XML like syntax , 
+14. JSX "is not HTML inside JS" , it is HTML-XML like syntax , 
 15. although JSX is not valid js how is the code rendered on browser ==> parcel transforms these jsx to browser understable code (using babel)
 16. /React Element (which is nothing but javascript object)==> on rendering ==> HTML element
 // jsx heading is also an react element , this conversion is done by babel , which converts jsx to js code (this js code return react element which is javascript object)
+
+
+{
+/*
+*Header
+ -Logo
+ -About
+ -home
+ -cart
+*Body
+ -Search
+ -restaurant Container
+  -restaurant cards
+    -restaurant name , ETA , cuisine
+*Footer
+ -copyright
+ -Links
+ -Address etc.   
+*/
+}
+
+17. bundler replaces the code of React,ReactDOM in the file
+18. Two ways of exporting 
+     -- one is export default , import normally using "<file_exported>" from "<PATH>"
+     -- export using named constants , import using {<file_exported>} from "<PATH>"
