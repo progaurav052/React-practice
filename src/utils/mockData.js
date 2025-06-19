@@ -1,4 +1,4 @@
-const cards = [
+const restaurantList = [
     {
       type: "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
       info: {
@@ -255,4 +255,4 @@ const cards = [
     },
   ];
 
-export default cards;  // deafult export (1st method of exporting)
+export default restaurantList;  // deafult export (1st method of exporting)

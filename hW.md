@@ -53,3 +53,10 @@
 18. Two ways of exporting 
      -- one is export default , import normally using "<file_exported>" from "<PATH>"
      -- export using named constants , import using {<file_exported>} from "<PATH>"
+
+
+19. Study about .filter, .map, .reduce in js 
+20. create an funcytionality of top rated restaurants button to view restaurants with rating >4.4
+21. use an mock reslist initially for this operation to check if its rendered 
+22. Also use Hooks for this operation and render it 
+23. Explain reconcilation,diff algorithm, why react is fast,virtual DOM ?    
