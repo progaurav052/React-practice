@@ -56,7 +56,12 @@
 
 
 19. Study about .filter, .map, .reduce in js 
-20. create an funcytionality of top rated restaurants button to view restaurants with rating >4.4
-21. use an mock reslist initially for this operation to check if its rendered 
-22. Also use Hooks for this operation and render it 
-23. Explain reconcilation,diff algorithm, why react is fast,virtual DOM ?    
+20. create an funcytionality of top rated restaurants button to view restaurants with rating >4.4 --done
+21. use an mock reslist initially for this operation to check if its rendered --done 
+22. Also use Hooks for this operation and render it --done
+23. Explain reconcilation,diff algorithm, why react is fast,virtual DOM ?    --done
+
+24. Our UI Need to interact with many API and outside world 
+    => How will it render the UX ?
+       loads ==>render ==> API calls ==> re-render 
+        => better UX 

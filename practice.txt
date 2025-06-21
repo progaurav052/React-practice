@@ -1,0 +1,56 @@
+import RestaurantCard from "./RestaurantCard";
+import restaurantList from "../utils/mockData";
+import { useState,useEffect } from "react";
+const Body = () => {
+  // state variables , on change of state it re-renders the component
+  const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList); //set initially to null
+  
+  useEffect(()=>{
+    fetchData();
+  },[])
+
+  const fetchData=async ()=>{
+    const data = await fetch(<API>); // super power given by browser
+    const json = data.json();//convert to json 
+    console.log(json);
+    setListOfRestaurants(json.data.cards[2].data.data.cards);
+  }
+  /*
+  if(listOfRestaurants.lentgh===0)
+  {
+    return (<h1>Loading</h1>);    // instead of this use shimmer UI
+  }
+  */
+  return (
+    <div className="body-container">
+      <div className="search-bar">
+        <button
+          className="top-rated-restaurant"
+          onClick={() => {
+            const filteredRestaurants = listOfRestaurants.filter(
+              (restaurant) => {
+                return restaurant.info.avgRating >= 4.4;
+              }
+            );
+            console.log(filteredRestaurants);
+            setListOfRestaurants(filteredRestaurants);
+          }}
+        >
+          Top Rated Restaurants
+        </button>
+      </div>
+      <div className="restaurant-container">
+        {listOfRestaurants.map((restaurant) => {
+          return (
+            <RestaurantCard
+              key={restaurant.info.id}
+              restaurantObj={restaurant}
+            ></RestaurantCard>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Body;

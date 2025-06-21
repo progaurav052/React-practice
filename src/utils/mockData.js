@@ -1,15 +1,15 @@
 const restaurantList = [
     {
-      type: "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      info: {
-        id: "7726",
-        name: "Samco",
-        cloudinaryImageId:
+      "type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+      "info": {
+        "id": "7726",
+        "name": "Samco",
+        "cloudinaryImageId":
           "FOOD_CATALOG/IMAGES/CMS/2025/2/16/1895657b-f477-49bb-b4cf-b49133128b00_773a1733-c32f-46a0-bf5f-b1e12a2342c2.jpeg",
         locality: "Alwarpet",
         areaName: "Alwarpet",
         costForTwo: "₹500 for two",
-        cuisines: [
+        "cuisines": [
           "Biryani",
           "South Indian",
           "Chinese",
@@ -17,13 +17,13 @@ const restaurantList = [
           "Kerala",
           "Mughlai",
         ],
-        avgRating: 4.5,
+        "avgRating": 4.5,
         parentId: "1235",
         avgRatingString: "4.5",
         totalRatingsString: "58K+",
         promoted: true,
-        sla: {
-          deliveryTime: 47,
+        "sla": {
+          "deliveryTime": 47,
           lastMileTravel: 8.4,
           slaString: "45-50 mins",
         },
@@ -220,39 +220,9 @@ const restaurantList = [
           source: "GOOGLE",
         },
       },
-    },
-    {
-      type: "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
-      info: {
-        id: "5474",
-        name: "Zaitoon",
-        cloudinaryImageId: "aa78f66562d1c205e7de05992990f84d",
-        locality: "Nungambakkam",
-        areaName: "Nungambakkam",
-        costForTwo: "₹700 for two",
-        cuisines: [
-          "Biryani",
-          "Arabian",
-          "North Indian",
-          "Tandoor",
-          "Chinese",
-          "Juices",
-        ],
-        avgRating: 4.4,
-        parentId: "4555",
-        avgRatingString: "4.4",
-        totalRatingsString: "10K+",
-        sla: {
-          deliveryTime: 29,
-          lastMileTravel: 3.6,
-          slaString: "25-30 mins",
-        },
-        availability: {
-          nextCloseTime: "2025-06-18 02:00:00",
-          opened: true,
-        },
-      },
-    },
+    }
+    
+    
   ];
 
 export default restaurantList;  // deafult export (1st method of exporting)
