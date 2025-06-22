@@ -2,10 +2,9 @@
   "name": "rdfull",
   "version": "1.0.0",
   "description": "this is Namaste react-app",
-
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -18,11 +17,12 @@
     "url": "https://github.com/progaurav052/React-practice/issues"
   },
   "homepage": "https://github.com/progaurav052/React-practice#readme",
-  "devDependencies": {
-    "parcel": "^2.15.2"
-  },
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^6.21.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.4"
   }
 }

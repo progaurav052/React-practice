@@ -65,3 +65,12 @@
     => How will it render the UX ?
        loads ==>render ==> API calls ==> re-render 
         => better UX 
+25. useEffect is used for this   
+26. Add some features like search and top rated restaurants 
+27. used live Swiggy API  
+28. useEffect  with [] (empty array )==> called only on intial render , without it is called after every render   
+    ==> if something is inside [<something>] , than eveyrtime that <something> is chnaged useEffect is called 
+
+
+
+29. Create multiple routes  ==> install package react router dom 

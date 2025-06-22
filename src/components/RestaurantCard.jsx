@@ -2,8 +2,9 @@ import { CDN_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
   const { restaurantObj } = props;
-  const { name, cuisines, avgRating, deliveryTime, costForTwo } =
+  const { name, cuisines, avgRating, costForTwo} =
     restaurantObj.info;
+  const {deliveryTime}=restaurantObj.info.sla;
   return (
     <div className="restaurant-card" style={{ backgroundColor: "#f0f0f0" }}>
       <img
