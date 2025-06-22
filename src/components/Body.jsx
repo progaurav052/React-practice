@@ -1,17 +1,22 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantList from "../utils/mockData";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
 
 const Body = () => {
   // state variables , on change of state it re-renders the component
-  const [listOfRestaurants, setListOfRestaurants] = useState(restaurantList); //set initially to null
-  const [filteredRestaurants, setFilteredRestaurants] =
-    useState(restaurantList);
+  const [listOfRestaurants, setListOfRestaurants]=useState([]); //set initially to null
+  const [filteredRestaurants, setFilteredRestaurants]=useState([]);
   const [searchBoxText, setSearchBoxText] = useState("");
-  useEffect(() => {
-    console.log("executed useEffect");
-  }, []);
+  useEffect(()=>{
+    fetchData();
+  },[])
+
+  const fetchData=async ()=>{
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.08950&lng=80.27390&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"); // super power given by browser
+    const json = await data.json();//convert to json 
+    setListOfRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setFilteredRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+  }
  
    return listOfRestaurants.length===0? <ShimmerUI/>:(
     <div className="body-container">
