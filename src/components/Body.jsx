@@ -72,7 +72,7 @@ const Body = () => {
         {filteredRestaurants.map((restaurant) => {
           return (
             
-              <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}> {console.log(restaurant.info.id)}
+              <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
                 <RestaurantCard restaurantObj={restaurant} />
               </Link>
              

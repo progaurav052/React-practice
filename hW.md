@@ -74,3 +74,20 @@
 
 
 29. Create multiple routes  ==> install package react router dom 
+30. use createBroswerRouter and RouterProvider , useRouteError()
+31. use children paths using outlet and compare performance 
+32. used live Swiggy API to get MenuINfo component 
+
+
+33. Class Based component for About Page 
+34. About Page will contain User cards (Team Members)
+35. extends React.componet ==> our class will extend this
+36. why do we use super(props) inside the constructor
+37. this.props.property ==> why do we use this ??
+38. React class Component lifecycle Methods ==> Mounting {Constructor() is called first , render () , ComponentDidMount()}
+39. whenver there are multiple children for a parent 
+    ==> React optimizes itself 
+      ==> it batches the Render phase and executes it first , followed by commit phase 
+        ==> so that DOM updates (which is costly) is batched together and executed at once 
+        Please refer Doc to understand this
+40. 
