@@ -25,10 +25,6 @@ class Userclass extends React.Component {
     });
   }
   componentDidUpdate(prevProps,prevState) {
-    if(this.state.userInfo!== prevState.userInfo)
-    {
-      console.log("API CALLED")
-    }
     console.log("component did update");
   }
   componentWillUnmount(){

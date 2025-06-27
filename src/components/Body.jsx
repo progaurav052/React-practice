@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
-
+import { RES_LIST_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   // state variables , on change of state it re-renders the component
   const [listOfRestaurants, setListOfRestaurants] = useState([]); //set initially to null
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchBoxText, setSearchBoxText] = useState("");
+  const OnlineStatus = useOnlineStatus();
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.08950&lng=80.27390&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    ); // super power given by browser
+    const data = await fetch(RES_LIST_URL); // super power given by browser
     const json = await data.json(); //convert to json
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -24,6 +24,12 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  
+  if(OnlineStatus==false)
+  {
+    return <h2>!!Looks like there is No interent , Please check your connection</h2>
+  }
 
   return listOfRestaurants.length === 0 ? (
     <ShimmerUI />
@@ -71,11 +77,12 @@ const Body = () => {
       <div className="restaurant-container">
         {filteredRestaurants.map((restaurant) => {
           return (
-            
-              <Link to={"/restaurant/" + restaurant.info.id} key={restaurant.info.id}>
-                <RestaurantCard restaurantObj={restaurant} />
-              </Link>
-             
+            <Link
+              to={"/restaurant/" + restaurant.info.id}
+              key={restaurant.info.id}
+            >
+              <RestaurantCard restaurantObj={restaurant} />
+            </Link>
           );
         })}
       </div>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ShimmerUI from "./ShimmerUI";
+import useResMenu from "../utils/useResMenu";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const MenuInfo = () => {
   /*{ const [restaurantMenu, setRestaurantMenu] = useState([]);
   const [restaurantName, setRestaurantName] = useState("");
@@ -9,21 +11,14 @@ const MenuInfo = () => {
   this will cause re-rendering for just assigning values , 
   do re render when you want to change on UI
   */
-  const [resMenuInfo, setResMenuInfo] = useState(null);
-  // on the click of card , that specific menu API is called
-  useEffect(() => {
-    fetchMenuData();
-  }, []);
   const { resId } = useParams();
-  const fetchMenuData = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=13.08950&lng=80.27390&restaurantId=" +
-        resId +
-        "&catalog_qa=undefined&submitAction=ENTER"
+  const OnlineStatus = useOnlineStatus();
+  if (OnlineStatus == false) {
+    return (
+      <h2>!!Looks like there is No interent , Please check your connection</h2>
     );
-    const json = await data.json();
-    setResMenuInfo(json);
-  };
+  }
+  const resMenuInfo = useResMenu(resId); // hook ==> js function
   if (resMenuInfo === null) {
     return <ShimmerUI />;
   }
