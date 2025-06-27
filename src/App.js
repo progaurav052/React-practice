@@ -7,6 +7,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import MenuInfo from "./components/MenuInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RandomImage from "./components/RandomImage";
 
 const AppLayout = () => {
   return (
@@ -44,6 +45,11 @@ const appRouter = createBrowserRouter([
       {
         path :"/restaurant/:resId", // it is an dynamic path (resID will chnage for every restaurant)
         element:<MenuInfo/>,
+        errorElement:<Error/>
+      },
+      {
+        path:"/counter",
+        element:<RandomImage/>,
         errorElement:<Error/>
       }
     ],

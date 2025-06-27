@@ -2,44 +2,48 @@ import React from "react";
 class Userclass extends React.Component {
   constructor(props) {
     //this is the best place to recieve props also create state variables
+    
     super(props);
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo: {
+        name: "Dummy-name",
+        location: "Dummy-location",
+        email: "Dummy-emai",
+        avatar_url: "Dummy-url",
+      },
     };
-    // all the state variables are bundled inside this object
-    console.log(`${this.props.name} class component Constructor`);
-
+    console.log("component constructor")
   }
-  componentDidMount(){
-    console.log(`${this.props.name} child Component did mount`);
+  async componentDidMount() {
+    console.log("Component did mount");
+
+    const data = await fetch("https://api.github.com/users/akshaymarch7");
+    const json = await data.json();
+    console.log(json);
+    this.setState({
+      userInfo: json,
+    });
+  }
+  componentDidUpdate(prevProps,prevState) {
+    if(this.state.userInfo!== prevState.userInfo)
+    {
+      console.log("API CALLED")
+    }
+    console.log("component did update");
+  }
+  componentWillUnmount(){
+    console.log("component unmounted");
   }
   render() {
-    console.log(`${this.props.name} child Render`);
-    const { name, email, Location } = this.props;
+    console.log("component render");
+    const { name, location, avatar_url, twitter_username } =
+      this.state.userInfo;
     return (
       <div className="user-card">
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Count: {this.state.count}
-        </button>
-        <button
-          onClick={() => {
-            this.setState({
-              count2: this.state.count2 + 2,
-            });
-          }}
-        >
-          Count2: {this.state.count2}
-        </button>
-        <h2>Name :{name}</h2>
-        <h4>Location :{email}</h4>
-        <h4>email:{Location}</h4>
+        <img src={avatar_url}/>
+        <h2>{name}</h2>
+        <h4>{location}</h4>
+        <h4>@{twitter_username}</h4>
       </div>
     );
   }
