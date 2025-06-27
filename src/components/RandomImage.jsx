@@ -1,39 +1,46 @@
 import React from "react";
 class RandomImage extends React.Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-        count:0,
-        count2:2,
-    }
+    this.state = {
+      count: 0,
+      count2: 2,
+    };
+  }
 
-  } 
-  
-  componentDidMount(){
+  componentDidMount() {
     console.log("component did Mount");
     console.log("API-called");
   }
-  componentDidUpdate(prevProps,prevState){
+  componentDidUpdate(prevProps, prevState) {
     console.log("component did update");
-    if(this.state.count != prevState.count)
-    {
-        console.log("API-called");
+    if (this.state.count != prevState.count) {
+      console.log("API-called"); // this API is called whenver the count chnages
+      //equivalent implementaion of useEffect(()=>{
+      //    API-CALLED; },[count])
     }
   }
   render() {
     return (
       <div>
-        <button onClick={() => {
+        <button
+          onClick={() => {
             this.setState({
-                count:this.state.count +1
-            })
-        }}>{this.state.count}</button>
-         <button onClick={() => {
+              count: this.state.count + 1,
+            });
+          }}
+        >
+          {this.state.count}
+        </button>
+        <button
+          onClick={() => {
             this.setState({
-                count2:this.state.count2 +1
-            })
-        }}>{this.state.count2}</button>
+              count2: this.state.count2 + 1,
+            });
+          }}
+        >
+          {this.state.count2}
+        </button>
       </div>
     );
   }
