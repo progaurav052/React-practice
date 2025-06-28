@@ -25,9 +25,8 @@ const Body = () => {
     );
   };
 
-  
-  if(OnlineStatus==false)
-  {
+
+  if (OnlineStatus == false) {
     return <h2>!!Looks like there is No interent , Please check your connection</h2>
   }
 
@@ -35,17 +34,17 @@ const Body = () => {
     <ShimmerUI />
   ) : (
     <div className="body-container">
-      <div className="filter-section">
-        <div className="searchAndTopRated">
+      <div className="filter-section flex">
+        <div className="m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchBoxText}
             onChange={(e) => {
               setSearchBoxText(e.target.value);
             }}
           />
-          <button
+          <button className="bg-green-100 m-4 px-4 py-2 rounded-lg"
             onClick={() => {
               const filteredRestaurant = listOfRestaurants.filter(
                 (restaurant) => {
@@ -59,8 +58,10 @@ const Body = () => {
           >
             Search
           </button>
-          <button
-            className="top-rated-restaurant"
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          <button 
+            className="top-rated-restaurant px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
               const topRatedRestaurants = listOfRestaurants.filter(
                 (restaurant) => {
@@ -73,8 +74,9 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

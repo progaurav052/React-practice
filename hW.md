@@ -93,5 +93,15 @@
 40. Added custom Hook for Fetching Data in MenuInfo Component 
    
 
-#Feature
+# Feature
 41. Create an Hook which shows online status and is displayed on Header and in Pages which use Live API => Done 
+
+# Styling our APP
+42. One way is to add css using className in jsx and creating an .css file 
+43. using Sass , Using Styled components => used in Uber and lot of other companies
+
+# Using frameworks and component libraries
+44. eg : MaterialUI , ChakraUI, bootstrap 
+
+# Will use Tailwind CSS for this project :
+45. how to install tailwind CSS

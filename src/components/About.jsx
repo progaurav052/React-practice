@@ -5,17 +5,17 @@ class About extends React.Component {
   constructor(props) {
     super(props);
 
-    
+
   }
-  componentDidMount(){
-    
+  componentDidMount() {
+
   }
   render() {
-    
+
     return (
       <div className="about-container">
         <h1>Our Team </h1>
-        <Userclass/>
+        <Userclass />
       </div>
     );
   }

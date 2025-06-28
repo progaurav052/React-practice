@@ -7,17 +7,19 @@ const Header = () => {
   const [logStatus,setLogStatus]=useState("LogIn")
   const OnlineStatus=useOnlineStatus();
   return (
-    <div className="header-container">
-      <div className="logo-container">
+    <div className="flex justify-between bg-pink-100 shadow-lg m-2 rounded-lg">
+      <div className="w-24">
         <img className="logo" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
-          <li>Online Status:{OnlineStatus?"✅" :"🔴"}</li>
-          <li> <Link to="/">Home 🏠</Link></li>
-          <li> <Link to="/about">About ℹ</Link></li>
-          <li><Link to="/contact">Contact-us 📞</Link></li>
-          <li>Cart 🛒</li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+
+          <li className="px-3">Online Status:{OnlineStatus?"✅" :"🔴"}</li>
+          <li className="px-3"><Link to="/grocery">Grocery</Link></li>
+          <li className="px-3"> <Link to="/">Home 🏠</Link></li>
+          <li className="px-3"> <Link to="/about">About ℹ</Link></li>
+          <li className="px-3"><Link to="/contact">Contact-us 📞</Link></li>
+          <li className="px-3">Cart 🛒</li>
           <button className="login" onClick={()=>{
             setLogStatus(logStatus==="Login"?"LogOut":"Login")}}>{logStatus}</button>
         </ul>
