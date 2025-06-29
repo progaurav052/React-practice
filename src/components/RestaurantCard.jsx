@@ -21,4 +21,18 @@ const RestaurantCard = (props) => {
   );
 };
 
+
+export const withDiscountLabel=(RestaurantCard)=>{
+  return (props)=>{
+    const {restaurantObj}=props;
+    const {header,discountTag,subHeader}=restaurantObj.info.aggregatedDiscountInfoV3;
+    return(
+    <div>
+      <label className="absolute bg-orange-200 m-2 p-2 font-bold">{`${header} ${discountTag ?? subHeader ?? ''}`}</label>
+      <RestaurantCard {...props}/>
+    </div>  
+    );
+  }
+}
+
 export default RestaurantCard;

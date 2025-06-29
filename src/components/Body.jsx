@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI";
 import { useState, useEffect } from "react";
 import { RES_LIST_URL } from "../utils/constants";
@@ -10,6 +10,9 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchBoxText, setSearchBoxText] = useState("");
   const OnlineStatus = useOnlineStatus();
+
+  const RestaurantWithOffer = withDiscountLabel(RestaurantCard);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -60,7 +63,7 @@ const Body = () => {
           </button>
         </div>
         <div className="m-4 p-4 flex items-center">
-          <button 
+          <button
             className="top-rated-restaurant px-4 py-2 bg-gray-100 rounded-lg"
             onClick={() => {
               const topRatedRestaurants = listOfRestaurants.filter(
@@ -82,8 +85,8 @@ const Body = () => {
             <Link
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
-            >
-              <RestaurantCard restaurantObj={restaurant} />
+            >{restaurant.info.aggregatedDiscountInfoV3 ? <RestaurantWithOffer restaurantObj={restaurant} /> : <RestaurantCard restaurantObj={restaurant} />}
+
             </Link>
           );
         })}
