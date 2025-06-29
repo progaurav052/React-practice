@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import { LOGO_URL } from "../utils/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 const Header = () => {
 
   const [logStatus,setLogStatus]=useState("LogIn")
   const OnlineStatus=useOnlineStatus();
+  const {loggedInUser}=useContext(userContext);
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg m-2 rounded-lg">
       <div className="w-24">
@@ -22,6 +24,7 @@ const Header = () => {
           <li className="px-3">Cart 🛒</li>
           <button className="login" onClick={()=>{
             setLogStatus(logStatus==="Login"?"LogOut":"Login")}}>{logStatus}</button>
+           <li className="px-3">{loggedInUser}</li> 
         </ul>
       </div>
     </div>

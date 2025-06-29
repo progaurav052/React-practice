@@ -8,15 +8,20 @@ import Error from "./components/Error";
 import MenuInfo from "./components/MenuInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RandomImage from "./components/RandomImage";
+import userContext from "./utils/userContext";
 
-const Grocery = lazy(()=>(import("./components/Grocery")));// will do lazy Loading , creates a 1 different bundle for this components and its child 
+const Grocery = lazy(() => (import("./components/Grocery")));// will do lazy Loading , creates a 1 different bundle for this components and its child 
 
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <userContext.Provider value={{ loggedInUser: "Ganesh" }}>
+      <div className="app">
+        <Header />
+        <userContext.Provider value={{ loggedInUser: "Gaurav" }}>
+          <Outlet />
+        </userContext.Provider>
+      </div>
+    </userContext.Provider>
   );
 };
 
@@ -45,21 +50,21 @@ const appRouter = createBrowserRouter([
         errorElement: <Error />,
       },
       {
-        path :"/restaurant/:resId", // it is an dynamic path (resID will chnage for every restaurant)
-        element:<MenuInfo/>,
-        errorElement:<Error/>
+        path: "/restaurant/:resId", // it is an dynamic path (resID will chnage for every restaurant)
+        element: <MenuInfo />,
+        errorElement: <Error />
       },
       {
-        path:"/counter",
-        element:<RandomImage/>,
-        errorElement:<Error/>
+        path: "/counter",
+        element: <RandomImage />,
+        errorElement: <Error />
       },
       {
-        path:"/grocery",
-        element:<Suspense fallback={<h1>Loading...</h1>}><Grocery/></Suspense>,
-        errorElement:<Error/>
+        path: "/grocery",
+        element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+        errorElement: <Error />
       }
-      
+
     ],
   },
 ]);
