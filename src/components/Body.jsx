@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
 import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import ShimmerUI from "./ShimmerUI";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { RES_LIST_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 const Body = () => {
   // state variables , on change of state it re-renders the component
   const [listOfRestaurants, setListOfRestaurants] = useState([]); //set initially to null
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchBoxText, setSearchBoxText] = useState("");
   const OnlineStatus = useOnlineStatus();
+  const {loggedInUser,setUserName}=useContext(userContext);
 
   const RestaurantWithOffer = withDiscountLabel(RestaurantCard);
 
@@ -61,6 +63,7 @@ const Body = () => {
           >
             Search
           </button>
+          <input className="border border-solid border-black" type="text" value={loggedInUser} onChange={(event)=>{setUserName(event.target.value)}}/>
         </div>
         <div className="m-4 p-4 flex items-center">
           <button
@@ -77,6 +80,7 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+        
 
       </div>
       <div className="flex flex-wrap">

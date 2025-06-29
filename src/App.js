@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -13,13 +13,14 @@ import userContext from "./utils/userContext";
 const Grocery = lazy(() => (import("./components/Grocery")));// will do lazy Loading , creates a 1 different bundle for this components and its child 
 
 const AppLayout = () => {
+
+  const [userName, setUserName] = useState("User")
   return (
-    <userContext.Provider value={{ loggedInUser: "Ganesh" }}>
+    //this is like we are changing the value of Context , by also adding set...func() and therefore making it available accross the app
+    <userContext.Provider value={{ loggedInUser: userName ,setUserName}}> 
       <div className="app">
         <Header />
-        <userContext.Provider value={{ loggedInUser: "Gaurav" }}>
-          <Outlet />
-        </userContext.Provider>
+        <Outlet />
       </div>
     </userContext.Provider>
   );
