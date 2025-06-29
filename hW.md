@@ -105,3 +105,19 @@
 
 # Will use Tailwind CSS for this project :
 45. how to install tailwind CSS
+
+#feature
+46. Saw about HOC and how to use it 
+47. Built an accordian using uncrontrolled component 
+48. lifted up state ==> to make it such that if one accordian is expanded other is closed (Lifting up state)
+    ==> done the above by sending reference of the state variable changing func() to children
+49. How to add collapse feature with the above feature    
+
+
+49. Prop Drilling and how to avoid it:(Pending)
+    ==>    ContextAPI ==> like an global storage 
+    ==> use this to create an Fetaure of displaying loggedIn Username 
+    ==> use it also in Class based Component hint :UseConetxt.consumer
+    ==> try modfying this using useContext.provider 
+    ==> change it live using an input box in body component and (hint : pass setfunc() in context also)
+

@@ -14,6 +14,8 @@ const MenuInfo = () => {
   */
   const { resId } = useParams();
   const OnlineStatus = useOnlineStatus();
+  const [showIndex,setShowIndex]=useState(0)
+  
   if (OnlineStatus == false) {
     return (
       <h2>!!Looks like there is No interent , Please check your connection</h2>
@@ -38,8 +40,8 @@ const MenuInfo = () => {
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
       <h2 className="font-bold text-lg">Rating - {avgRating}</h2>
       <p className="font-bold text-lg">{cuisines.join(", ")} - {costForTwoMessage}</p>
-      {foodCategories.map((category)=>{
-        return(<MenuCategory key={category.card.card.categoryId}data={category.card.card} />);
+      {foodCategories.map((category,index)=>{
+        return(<MenuCategory key={category.card.card.categoryId}data={category.card.card} showItems={index===showIndex?true:false} setShowIndex={setShowIndex} index={index}/>);
       })}
     </div>
   );
