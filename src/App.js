@@ -11,6 +11,7 @@ import RandomImage from "./components/RandomImage";
 import userContext from "./utils/userContext";
 import { Provider } from "react-redux"; // this acts like bridge , done by react-redux
 import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 const Grocery = lazy(() => (import("./components/Grocery")));// will do lazy Loading , creates a 1 different bundle for this components and its child 
 
 const AppLayout = () => {
@@ -66,6 +67,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/grocery",
         element: <Suspense fallback={<h1>Loading...</h1>}><Grocery /></Suspense>,
+        errorElement: <Error />
+      },
+      {
+        path: "/cart",
+        element: <Cart/>,
         errorElement: <Error />
       }
 

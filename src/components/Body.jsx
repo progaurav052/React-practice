@@ -22,6 +22,7 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(RES_LIST_URL); // super power given by browser
     const json = await data.json(); //convert to json
+    console.log(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -29,6 +30,8 @@ const Body = () => {
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+  
+
 
 
   if (OnlineStatus == false) {

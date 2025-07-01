@@ -26,7 +26,7 @@ const Header = () => {
           <li className="px-3"> <Link to="/">Home 🏠</Link></li>
           <li className="px-3"> <Link to="/about">About ℹ</Link></li>
           <li className="px-3"><Link to="/contact">Contact-us 📞</Link></li>
-          <li className="px-3">Cart ({cartItems.length})</li>
+          <li className="px-3"><Link to="/cart">Cart ({cartItems.length} items) </Link></li>
           <button className="login" onClick={()=>{
             setLogStatus(logStatus==="Login"?"LogOut":"Login")}}>{logStatus}</button>
            <li className="px-3">{loggedInUser}</li> 
