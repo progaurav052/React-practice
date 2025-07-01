@@ -9,7 +9,8 @@ import MenuInfo from "./components/MenuInfo";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RandomImage from "./components/RandomImage";
 import userContext from "./utils/userContext";
-
+import { Provider } from "react-redux"; // this acts like bridge , done by react-redux
+import appStore from "./utils/appStore";
 const Grocery = lazy(() => (import("./components/Grocery")));// will do lazy Loading , creates a 1 different bundle for this components and its child 
 
 const AppLayout = () => {
@@ -17,12 +18,14 @@ const AppLayout = () => {
   const [userName, setUserName] = useState("User")
   return (
     //this is like we are changing the value of Context , by also adding set...func() and therefore making it available accross the app
-    <userContext.Provider value={{ loggedInUser: userName ,setUserName}}> 
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </userContext.Provider>
+    <Provider store={appStore}>
+      <userContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="app">
+          <Header />
+          <Outlet />
+        </div>
+      </userContext.Provider>
+    </Provider>
   );
 };
 

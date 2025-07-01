@@ -121,3 +121,20 @@
     ==> try modfying this using useContext.provider 
     ==> change it live using an input box in body component and (hint : pass setfunc() in context also)
 
+
+# Redux toolkit for creating and managing store (alternate to useContext)
+
+50. Note : Redux is not Mandatory ,use it only when required 
+51. Redux is not an part of react , redux lib is imported using npm 
+52. Redux offers state Management , can be used with many js , heavily used with react 
+53. Find diff bw react-redux , redux-toolkit, and vanilla redux and redux 
+54. redux toolkit is latest way of writing redux 
+
+
+# Feature to be developed using RTK 
+-install @reduxjs/toolkit and react-redux
+-build our store
+-connect our store to app
+-slice
+-dispatch
+-selectore
