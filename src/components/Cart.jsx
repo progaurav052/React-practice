@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import Itemlist from "./Itemlist";
+import Itemlist, { withRemoveLabel } from "./Itemlist";
 import { clearCart } from "../utils/cartSlice";
 const Cart = () => {
 
@@ -8,7 +8,9 @@ const Cart = () => {
     const clickHandler=()=>{
         dispatch(clearCart())
     }
+    console.log(cartItems)
     
+    const ItemWithRemoveLabel=withRemoveLabel(Itemlist);
     
     return cartItems.length==0?(<h1 className="text-center m-4 p-4 font-bold">No Items Added to the Cart!!!</h1>):(
         <div className="text-center m-4 p-4">
@@ -18,7 +20,7 @@ const Cart = () => {
 
                 return (
                     <div key={index} className="w-6/12 m-auto">
-                        <Itemlist  iteminfo={item} />
+                       <ItemWithRemoveLabel iteminfo={item}/>
                     </div>);
             })}
         </div>

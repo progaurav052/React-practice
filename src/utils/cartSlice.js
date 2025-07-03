@@ -9,9 +9,14 @@ const cartSlice=createSlice({
         additem:(state,action)=>{  //with each action it is bound to kind of function on what should happen
             state.items.push(action.payload);
         },
-        removeItem:(state)=>{
-            state.items.pop();
-        },
+        removeitem: (state, action) => {
+            const itemIdToRemove = action.payload.id;
+            const index = state.items.findIndex(item => item.id === itemIdToRemove);
+            if (index !== -1) {
+              state.items.splice(index, 1); // remove one item from the found index
+            }
+          },
+          
         clearCart:(state)=>{
             state.items.length=0;
         }
@@ -36,4 +41,4 @@ const cartSlice=createSlice({
 
 export default cartSlice.reducer;
 
-export const {additem,removeItem,clearCart}=cartSlice.actions; // here the named exports are exported individually 
+export const {additem,removeitem,clearCart}=cartSlice.actions; // here the named exports are exported individually 

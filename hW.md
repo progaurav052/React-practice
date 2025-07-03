@@ -137,4 +137,6 @@
 -connect our store to app
 -slice
 -dispatch
--selectore
+-selector
+-addItem action , clearCart action , how to read this store ,
+-Develop and Feature to Remove items from the cart ==> use HOC , and RTK reducers for this 
