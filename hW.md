@@ -140,3 +140,27 @@
 -selector
 -addItem action , clearCart action , how to read this store ,
 -Develop and Feature to Remove items from the cart ==> use HOC , and RTK reducers for this 
+
+
+# Testing from Developer POV 
+-Unit testing 
+-Integration Testing
+-End to end testing
+
+-we will be using React Testing library , which had DOM testing library as its basis
+-react testing library uses jest BTS 
+- jest stands for javascript testing framework
+
+-install React testing library 
+-install jest 
+-install babel dependencies for jest 
+-configure jest to use babel and overide transpilation of babel (By creating .parcelrc )
+
+jest configuration:
+
+commands:
+npm init jest@latest ==> creates an configuration file for jest 
+// we need to explicitly install jsdom 
+jsdom => we dont run testcases on the server or on chrome ... for this we need an env , jsdom provides this env 
+
+we need to install @... package ['@babel/preset-react',{runtime :"automatic"}], // will help us to write jsx syntax in the test file inside render()
