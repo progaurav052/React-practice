@@ -15,3 +15,10 @@ test("should have a submit button",()=>{
     expect(submitButton).toBeInTheDocument();
 
 })
+
+test("should have 2 input boxes",()=>{
+    render(<Contact/>);
+    const inputBoxes=screen.getAllByRole("textbox");
+
+    expect(inputBoxes.length).toBe(2);
+})

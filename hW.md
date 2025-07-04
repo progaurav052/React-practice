@@ -75,8 +75,10 @@
 
 29. Create multiple routes  ==> install package react router dom 
 30. use createBroswerRouter and RouterProvider , useRouteError()
+“<RouterProvider> enables routing in our application by providing the router configuration to React Router.”
 31. use children paths using outlet and compare performance 
 32. used live Swiggy API to get MenuINfo component 
+
 
 
 33. Class Based component for About Page 
