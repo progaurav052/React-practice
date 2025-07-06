@@ -166,3 +166,4 @@ npm init jest@latest ==> creates an configuration file for jest
 jsdom => we dont run testcases on the server or on chrome ... for this we need an env , jsdom provides this env 
 
 we need to install @... package ['@babel/preset-react',{runtime :"automatic"}], // will help us to write jsx syntax in the test file inside render()
+toBeInTheDocument(); // @testing-library/jest-dom 
