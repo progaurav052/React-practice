@@ -11,11 +11,21 @@ const MenuCategory = (props) => {
         index:
     }
         */
+    const [showing,setShowing]=useState(false);
     const { itemCards, title } = props.data;
     const {showItems,setShowIndex,index}=props;
 
     const clickHandler=()=>{
-        setShowIndex(index);
+        if(showItems==true)
+        {
+            
+            setShowIndex(null);
+        }
+        else{
+            
+            setShowIndex(index);
+        }
+        
     }
     
     return (
