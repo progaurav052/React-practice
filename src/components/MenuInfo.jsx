@@ -14,7 +14,7 @@ const MenuInfo = () => {
   */
   const { resId } = useParams();
   const OnlineStatus = useOnlineStatus();
-  const [showIndex,setShowIndex]=useState(0)
+  const [showIndex,setShowIndex]=useState(null)
   
   if (OnlineStatus == false) {
     return (
